@@ -8,6 +8,7 @@ platform:
 
 steps:
 - name: build
+  image:ppc64le/alpine:3.14
   commands:
   - echo " Build successfully"
   
