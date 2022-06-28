@@ -6,8 +6,11 @@ platform:
   arch: ppc64le
   os: linux
 
-
-
+steps:
+- name: build
+  image: golang:1.10
+  commands:
+  - echo "It tested!"
 - name: publish
   image: plugins/docker:18
   settings:
