@@ -8,12 +8,10 @@ platform:
 
 steps:
 - name: build
-  image: ppc64le/alpine:3.14
+  image: plugins/docker:18
   commands:
-  - echo " Build successfully"
-  - yum install docker
-  
-  - podman build -f docker/Dockerfile.linux.ppc64le -t drone/git:linux.ppc64le .
+  - echo " Build successfully"  
+  - docker build -f docker/Dockerfile.linux.ppc64le -t drone/git:linux.ppc64le .
   - docker push drone/git:linux.ppc64le
   environment:
     USERNAME:
