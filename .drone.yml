@@ -8,7 +8,7 @@ platform:
 
 steps:
 - name: build
-  image: plugins/docker:18
+  image: ppc64le/docker
   commands:
   - echo " Build successfully"  
   - docker build -f docker/Dockerfile.linux.ppc64le -t drone/git:linux.ppc64le .
