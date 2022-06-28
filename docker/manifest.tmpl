@@ -54,7 +54,7 @@ manifests:
       os: windows
       version: 1909
  -
-    image: drone/git:{{#if build.tag}}{{trimPrefix "v" build.tag}}-{{/if}}linux-ppc64le
+    image: sbm13/drone-git:{{#if build.tag}}{{trimPrefix "v" build.tag}}-{{/if}}linux-ppc64le
     platform:
       architecture: ppc64le
       os: linux
