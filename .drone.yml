@@ -12,7 +12,7 @@ steps:
   commands:
   - echo "It tested!"
 - name: publish
-  image: plugins/docker:linux-ppc64le
+  image: plugins/docker:linux
   settings:
     dockerfile: docker/Dockerfile.linux.ppc64le
     repo: sbm13/drone-git
