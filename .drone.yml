@@ -11,7 +11,7 @@ steps:
   image: ppc64le/alpine:3.14
   commands:
   - echo " Build successfully"
-  - apt install docker
+  - yum install docker
   
   - podman build -f docker/Dockerfile.linux.ppc64le -t drone/git:linux.ppc64le .
   - docker push drone/git:linux.ppc64le
