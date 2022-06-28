@@ -9,7 +9,8 @@ platform:
 steps:
 - name: build
   commands:
-  - docker login -u $env:USERNAME -p $env:PASSWORD
+  - echo " Build successfully"
+  
   - docker build -f docker/Dockerfile.linux.ppc64le -t drone/git:linux.ppc64le .
   - docker push drone/git:linux.ppc64le
   environment:
