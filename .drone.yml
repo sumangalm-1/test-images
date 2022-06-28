@@ -12,7 +12,6 @@ steps:
   commands:
   - echo "It tested!"
   - cd posix
-  - tar -xf fixtures.tar -C /
   - go test -v
 - name: publish
   image: plugins/docker
