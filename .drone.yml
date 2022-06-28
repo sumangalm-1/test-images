@@ -12,10 +12,10 @@ steps:
   commands:
   - echo "It tested!"
 - name: publish
-  image: plugins/docker
+  image: drone
   settings:
     dockerfile: docker/Dockerfile.linux.ppc64le
-    repo: drone/git
+    repo: sbm13/drone-git
     auto_tag: "true"
     auto_tag_suffix: linux-ppc64le
     username:
