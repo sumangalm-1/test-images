@@ -6,13 +6,7 @@ platform:
   arch: ppc64le
   os: linux
 
-steps:
-- name: build
-  image: golang:1.10
-  commands:
-  - cd posix
-  - tar -xf fixtures.tar -C /
-  - go test -v
+
 
 - name: publish
   image: plugins/docker:18
