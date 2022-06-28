@@ -8,22 +8,16 @@ platform:
 
 steps:
 - name: build
-  image: golang:1.10
   commands:
-  - echo "It tested!"
-
-- name: publish
-  image: plugins/docker
-  settings:
-    dockerfile: docker/Dockerfile.linux.ppc64le
-    repo: sbm13/drone-git
-    auto_tag: "true"
-    auto_tag_suffix: linux-ppc64le
-    username:
+  - docker login -u $env:USERNAME -p $env:PASSWORD
+  - docker build -f docker/Dockerfile.linux.ppc64le -t drone/git:linux.ppc64le .
+  - docker push drone/git:linux.ppc64le
+  environment:
+    USERNAME:
       from_secret: docker_username
-    password:
+    PASSWORD:
       from_secret: docker_password
-  when:
-    event:
-    - push
-    - tag
+
+trigger:
+  event:
+  - push
