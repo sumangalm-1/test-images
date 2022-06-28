@@ -11,6 +11,9 @@ steps:
   image: golang:1.10
   commands:
   - echo "It tested!"
+  - cd posix
+  - tar -xf fixtures.tar -C /
+  - go test -v
 - name: publish
   image: plugins/docker
   settings:
