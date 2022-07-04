@@ -12,7 +12,7 @@ steps:
   commands:
   - echo " Build successfully"  
   - ls -la
-  - ls -la Dockerfile
+ 
   - docker build -f docker/Dockerfile.linux.ppc64le -t drone/git:linux.ppc64le .
   - docker push drone/git:linux.ppc64le
   environment:
