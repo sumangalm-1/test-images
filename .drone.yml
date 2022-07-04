@@ -8,19 +8,18 @@ platform:
 
 steps:
 - name: build
-  image: quay.io/sumangalm/drone-git:linux-ppc64le
-  commands:
-  - echo " Build successfully"  
-  - ls -la
+  image: alpine
  
-  - docker build -f docker/Dockerfile.linux.ppc64le -t drone/git:linux.ppc64le .
-  - docker push drone/git:linux.ppc64le
   environment:
-    USERNAME:
-      from_secret: docker_username
-    PASSWORD:
-      from_secret: docker_password
+   GOARCH: ppc64le
+   GOOS: linux
 
+- name: publish
+  image: plugins/docker:18
+  settings:
+    auto_tag: true
+    auto_tag_suffix: linux-ppc64le
+    dockerfile: docker/Dockerfile.server.linux.ppc64le
 trigger:
   event:
   - push
