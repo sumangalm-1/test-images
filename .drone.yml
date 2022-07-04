@@ -15,7 +15,7 @@ steps:
    GOOS: linux
 
 - name: publish
-  image: drone-runner
+  image: sbm13/drone-server
   settings:
     auto_tag: true
     auto_tag_suffix: linux-ppc64le
