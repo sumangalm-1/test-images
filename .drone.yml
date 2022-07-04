@@ -1,15 +1,20 @@
 kind: pipeline
-type: docker
+type: ssh
 name: linux-ppc64le
 
 platform:
   os: linux
   arch: ppc64le
 
+server:
+  host:
+    from_secret: host
+  password:
+    from_secret: password
+  user:
+    from_secret: username
 steps:
 - name: build
-  image: alpine
- 
   commands:
   
   - docker build -f drone-git:linux-ppc64le -f ./docker/Dockerfile.linux.ppc64le .
