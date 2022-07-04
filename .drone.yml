@@ -4,6 +4,7 @@ name: linux-ppc64le
 
 platform:
   os: linux
+  arch: ppc64le
 
 steps:
 - name: build
