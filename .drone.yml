@@ -1,18 +1,17 @@
 kind: pipeline
 type: ssh
-name: linux
+name: default
 
 platform:
   os: linux
   arch: ppc64le
 
 server:
-  host:
-    from_secret: host
+  host: 169.110.54.69
+  user: root
   password:
     from_secret: password
-  user:
-    from_secret: username
+ 
 steps:
 - name: build
   commands:
