@@ -8,18 +8,15 @@ platform:
 
 steps:
 - name: build
-  image: alpine
- 
+  commands:
+  - docker login -u $env:USERNAME -p $env:PASSWORD
+  - docker build -f Dockerfile.linux.ppc64le -t drone/git:ppc64le .
+  - docker tag drone/git:ppc64le sbm13/drone/git:ppc64le
   environment:
-   GOARCH: ppc64le
-   GOOS: linux
-
-- name: publish
-  image: sbm13/drone-server
-  settings:
-    auto_tag: true
-    auto_tag_suffix: linux-ppc64le
-    dockerfile: docker/Dockerfile.server.linux.ppc64le
+    USERNAME:
+      from_secret: docker_username
+    PASSWORD:
+      from_secret: docker_password
 trigger:
   event:
   - push
