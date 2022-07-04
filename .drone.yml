@@ -8,7 +8,7 @@ platform:
 
 steps:
 - name: build
-  image: plugin/docker
+  image: quay.io/sumangalm/drone-git:linux-ppc64le
   commands:
   - echo " Build successfully"  
   - ls -la
