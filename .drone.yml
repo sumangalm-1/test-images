@@ -8,7 +8,7 @@ platform:
 
 steps:
 - name: build
-  image: ppc64le/docker
+  image: alpine
   commands:
   - echo " Build successfully"  
   - ls -la
