@@ -8,7 +8,7 @@ platform:
 
 steps:
 - name: build
-  image: ppc64le/docker
+ 
   commands:
   
   - docker build -f drone-git:linux-ppc64le -f ./docker/Dockerfile.linux.ppc64le .
