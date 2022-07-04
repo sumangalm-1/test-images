@@ -3,7 +3,6 @@ type: docker
 name: linux-ppc64le
 
 platform:
-  arch: ppc64le
   os: linux
 
 steps:
