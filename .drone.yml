@@ -15,7 +15,7 @@ steps:
    GOOS: linux
 
 - name: publish
-  image: plugins/docker:18
+  image: drone-runner
   settings:
     auto_tag: true
     auto_tag_suffix: linux-ppc64le
