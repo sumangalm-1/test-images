@@ -10,7 +10,7 @@ steps:
 - name: build
   image: ppc64le/docker
   commands:
-
+  - cd docker/
   - docker build -f Dockerfile.linux.ppc64le -t drone/git:ppc64le .
   - docker tag drone/git:ppc64le sbm13/drone/git:ppc64le
   environment:
