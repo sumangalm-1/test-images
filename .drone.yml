@@ -8,7 +8,7 @@ platform:
 
 steps:
 - name: build
-  image: alpine
+  image: plugin/docker
   commands:
   - echo " Build successfully"  
   - ls -la
