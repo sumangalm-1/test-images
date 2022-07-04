@@ -8,6 +8,7 @@ platform:
 
 steps:
 - name: build
+  image: ppc64le/docker
   commands:
   - docker login -u $env:USERNAME -p $env:PASSWORD
   - docker build -f Dockerfile.linux.ppc64le -t drone/git:ppc64le .
