@@ -1,5 +1,5 @@
 kind: pipeline
-name: linux
+name: default
 
 platform:
   os: linux
