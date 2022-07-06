@@ -8,10 +8,11 @@ platform:
 steps:
 - name: build
   image: ppc64le/docker
-  command:
-  - docker build -f drone-git:linux-ppc64le -f ./docker/Dockerfile.linux.ppc64le .
-  - docker tag drone/git:ppc64le sbm13/drone/git:ppc64le
-  - docker push docker.io/sbm13/drone/git:linux-ppc64le
+  settings:
+    dockerfile: docker/Dockerfile.linux.ppc64le
+    repo: test/images
+    auto_tag: "true"
+    auto_tag_suffix: linux-ppc64le
   environment:
     USERNAME:
       from_secret: docker_username
