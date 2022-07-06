@@ -7,10 +7,10 @@ platform:
   arch: ppc64le
 steps:
 - name: build
-  image: alpine/git
+  image: alpine-bash-git
   commands:
   - git clone https://github.com/sumangalm-1/test-images.git
-  - execute setup.sh
+  - sh setup.sh
   
 - name: publish
   image: ppc64le/docker
