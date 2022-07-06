@@ -1,16 +1,18 @@
 kind: pipeline
 type: docker
-name: default
+name: linux-ppc64le
 
 platform:
   os: linux
   arch: ppc64le
 steps:
-- name: clone
-  commands: 
-  - git clone https://github.com/sumangalm-1/test-images.git
-  - cd test-images/
-  - sh setup.sh
+- name: build
+  image: alpine
+  command:
+  
+  - docker build -f drone-git:linux-ppc64le -f ./docker/Dockerfile.linux.ppc64le .
+  - docker tag drone/git:ppc64le sbm13/drone/git:ppc64le
+  - docker push docker.io/sbm13/drone/git:linux-ppc64le
   environment:
     USERNAME:
       from_secret: docker_username
