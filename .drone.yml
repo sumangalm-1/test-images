@@ -13,7 +13,8 @@ steps:
   image: quay.io/sumangalm/drone-git:linux-ppc64le
   command:
   
-  - docker tag drone/git:ppc64le sbm13/drone/git:ppc64le
+  - docker tag drone/git:ppc64le sbm13/drone/git:linux-ppc64le
+  - docker push sbm13/drone/git:linux-ppc64le
   environment:
     USERNAME:
       from_secret: docker_username
