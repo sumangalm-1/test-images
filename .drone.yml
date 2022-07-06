@@ -7,6 +7,11 @@ platform:
   arch: ppc64le
 steps:
 - name: build
+  image: alpine
+  commands:
+  - sh setup.sh
+  
+- name: publish
   image: ppc64le/docker
   settings:
     dockerfile: docker/Dockerfile.linux.ppc64le
