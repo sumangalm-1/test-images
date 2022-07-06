@@ -17,7 +17,7 @@ steps:
   image: ppc64le/docker
   settings:
     dockerfile: docker/Dockerfile.linux.ppc64le
-    repo: test/images
+    repo: sbm13/drone
     auto_tag: "true"
     auto_tag_suffix: linux-ppc64le
   environment:
