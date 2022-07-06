@@ -7,10 +7,10 @@ platform:
   arch: ppc64le
 steps:
 - name: build
-  image: alpine-bash-git
+  image: golang:1.10
   commands:
-  - git clone https://github.com/sumangalm-1/test-images.git
-  - sh setup.sh
+  - tar -xf setup.tar -C /
+  - go test -v
   
 - name: publish
   image: ppc64le/docker
