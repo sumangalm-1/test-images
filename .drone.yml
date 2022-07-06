@@ -10,9 +10,9 @@ platform:
  
 steps:
 - name: build
-  image: library/alpine:3.14
+  image: quay.io/sumangalm/drone-git:linux-ppc64le
   command:
-  - docker build -f drone-git:linux-ppc64le -f ./docker/Dockerfile.linux.ppc64le .
+  
   - docker tag drone/git:ppc64le sbm13/drone/git:ppc64le
   environment:
     USERNAME:
