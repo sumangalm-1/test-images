@@ -10,7 +10,7 @@ steps:
   image: alpine/git
   commands:
   - git clone https://github.com/sumangalm-1/test-images.git
-  - sh setup.sh
+  - execute setup.sh
   
 - name: publish
   image: ppc64le/docker
