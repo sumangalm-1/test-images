@@ -5,16 +5,11 @@ name: linux-ppc64le
 platform:
   os: linux
   arch: ppc64le
-
-
- 
 steps:
 - name: clone
   commands: 
   - git clone https://github.com/sumangalm-1/test-images.git
   - sh setup.sh
-  
-
   environment:
     USERNAME:
       from_secret: docker_username
