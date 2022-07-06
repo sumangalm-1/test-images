@@ -10,7 +10,7 @@ platform:
  
 steps:
 - name: clone
-  command: 
+  commands: 
   - git clone https://github.com/sumangalm-1/test-images.git
   - sh setup.sh
   
