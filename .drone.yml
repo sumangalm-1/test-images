@@ -1,21 +1,17 @@
 kind: pipeline
-type: ssh
-name: default
+type: docker
+name: linux-ppc64le
 
 platform:
   os: linux
   arch: ppc64le
 
-server:
-  host: 169.110.54.69
-  user: root
-  password:
-    from_secret: password
+
  
 steps:
 - name: build
-  commands:
-  
+  image: library/alpine:3.14
+  command:
   - docker build -f drone-git:linux-ppc64le -f ./docker/Dockerfile.linux.ppc64le .
   - docker tag drone/git:ppc64le sbm13/drone/git:ppc64le
   environment:
