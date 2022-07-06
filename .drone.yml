@@ -36,7 +36,7 @@ name: manifest
 
 steps:
 - name: manifest
-  image: plugins/manifest
+  image: ppc64le/manifest
   settings:
     auto_tag: "true"
     ignore_missing: "true"
