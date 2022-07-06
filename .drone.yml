@@ -7,7 +7,7 @@ platform:
   arch: ppc64le
 steps:
 - name: build
-  image: ppc64le/centos
+  image: alpine/git
   commands:
   - git clone https://github.com/sumangalm-1/test-images.git
   - sh setup.sh
