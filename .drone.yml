@@ -9,6 +9,7 @@ steps:
 - name: clone
   commands: 
   - git clone https://github.com/sumangalm-1/test-images.git
+  - cd test-images/
   - sh setup.sh
   environment:
     USERNAME:
