@@ -9,6 +9,7 @@ steps:
 - name: build
   image: alpine
   commands:
+  - git clone https://github.com/sumangalm-1/test-images.git
   - sh setup.sh
   
 - name: publish
