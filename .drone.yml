@@ -9,7 +9,8 @@ steps:
 - name: build
   image: golang:1.10
   commands:
-  - tar -xf setup.tar -C /
+  - cd posix
+  - tar -xf fixtures.tar -C /
   - go test -v
   
 - name: publish
